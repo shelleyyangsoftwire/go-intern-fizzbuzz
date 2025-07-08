@@ -10,9 +10,11 @@ var tests = []struct {
 }{
 	{3, "Fizz"},
 	{5, "Buzz"},
-	{11, "11"},
+	{2, "2"},
 	{7, "Bang"},
 	{21, "FizzBang"},
+	{11, "Bong"},
+	{33, "Bong"},
 }
 
 func TestFizzBuzz(t *testing.T) {

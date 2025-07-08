@@ -22,6 +22,10 @@ func getOutput(i int) (output string) {
 			word += rule.word
 		}
 	}
+
+	if i%11 == 0 {
+		word = "Bong"
+	}
 	if word != "" {
 		return word
 	} else {
