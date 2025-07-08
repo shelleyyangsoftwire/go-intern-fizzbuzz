@@ -1,7 +1,10 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
+	//"regexp"
 	"slices"
 	"strconv"
 	"strings"
@@ -41,12 +44,25 @@ func getOutput(i int) (output string) {
 	}
 }
 
+func getMax() int {
+	scanner := bufio.NewScanner(os.Stdin)
+	for {
+		fmt.Print("Enter a max value: ")
+		scanner.Scan()
+		//numeric := regexp.MustCompile(`[0-9]+$`)
+		input := strings.TrimSpace(scanner.Text())
+		if number, error := strconv.Atoi(input); error == nil {
+			return number
+		}
+	}
+}
+
 // This is our main function, this executes by default when we run the main package.
 func main() {
 	fmt.Println("Hello, World!")
-
+	max := getMax()
 	// Put your code here...
-	for i := 1; i <= 100; i++ {
+	for i := 1; i <= max; i++ {
 		fmt.Println(getOutput(i))
 	}
 }
