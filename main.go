@@ -14,12 +14,12 @@ var rules = []struct {
 	word     string
 	active   bool
 }{
-	{3, "Fizz", false},
-	{13, "Fezz", false},
-	{5, "Buzz", false},
-	{7, "Bang", false},
-	{11, "Bong", false},
-	{17, "", false},
+	{3, "Fizz", true},
+	{13, "Fezz", true},
+	{5, "Buzz", true},
+	{7, "Bang", true},
+	{11, "Bong", true},
+	{17, "", true},
 }
 
 func getOutput(i int) (output string) {
@@ -51,8 +51,11 @@ func getInteger(message string) int {
 		scanner.Scan()
 		input := strings.TrimSpace(scanner.Text())
 		if number, error := strconv.Atoi(input); error == nil {
-			return number
+			if number > 0 {
+				return number
+			}
 		}
+		return -1
 	}
 }
 

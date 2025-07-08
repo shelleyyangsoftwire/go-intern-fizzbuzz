@@ -20,6 +20,13 @@ var tests = []struct {
 	{255, "BuzzFizz"},
 }
 
+var intTests = []struct {
+	input    string
+	expected int
+}{
+	{"3", 3},
+}
+
 func TestFizzBuzz(t *testing.T) {
 	for _, test := range tests {
 		result := getOutput(test.input)
@@ -27,4 +34,8 @@ func TestFizzBuzz(t *testing.T) {
 			t.Errorf("incorrect output %d --  got: %s, expected: %s", test.input, result, test.expected)
 		}
 	}
+}
+
+func TestGetInt(t *testing.T) {
+	//some test
 }
