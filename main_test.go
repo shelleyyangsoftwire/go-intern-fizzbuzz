@@ -15,6 +15,8 @@ var tests = []struct {
 	{21, "FizzBang"},
 	{11, "Bong"},
 	{33, "Bong"},
+	{13, "Fezz"},
+	{273, "FizzFezzBang"},
 }
 
 func TestFizzBuzz(t *testing.T) {

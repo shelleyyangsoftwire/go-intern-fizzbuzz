@@ -10,6 +10,7 @@ var rules = []struct {
 	word     string
 }{
 	{3, "Fizz"},
+	{13, "Fezz"},
 	{5, "Buzz"},
 	{7, "Bang"},
 }
