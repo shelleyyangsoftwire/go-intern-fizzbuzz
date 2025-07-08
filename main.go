@@ -22,7 +22,6 @@ var rules = []struct {
 	{17, "", false},
 }
 
-// this makes it easier to test individual outputs
 func getOutput(i int) (output string) {
 	word := []string{}
 	for _, rule := range rules {
@@ -91,9 +90,7 @@ func main() {
 		rules[index].active = reply
 	}
 
-	// Put your code here...
 	for i := 1; i <= max; i++ {
 		fmt.Println(getOutput(i))
 	}
-	//fmt.Println(rules)
 }
