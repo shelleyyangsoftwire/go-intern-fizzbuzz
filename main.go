@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"slices"
 	"strconv"
+	"strings"
 )
 
 var rules = []struct {
@@ -13,22 +15,27 @@ var rules = []struct {
 	{13, "Fezz"},
 	{5, "Buzz"},
 	{7, "Bang"},
+	{11, "Bong"},
 }
 
 // this makes it easier to test individual outputs
 func getOutput(i int) (output string) {
-	word := ""
+	word := []string{}
 	for _, rule := range rules {
 		if i%rule.multiple == 0 {
-			word += rule.word
+			word = append(word, rule.word)
 		}
 	}
 
 	if i%11 == 0 {
-		word = "Bong"
+		word = word[len(word)-1:]
 	}
-	if word != "" {
-		return word
+
+	if i%17 == 0 {
+		slices.Reverse(word)
+	}
+	if len(word) > 0 {
+		return strings.Join(word, "")
 	} else {
 		return strconv.Itoa(i)
 	}
